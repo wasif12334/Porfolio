@@ -10,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize EmailJS
 (function() {
-    // Replace with your EmailJS public key
     emailjs.init("75xB20-G1JQm9LGxo");
 })();
 
@@ -36,14 +35,12 @@ function showNotification(type, title, message, code = null) {
 
     container.appendChild(notification);
 
-    // Handle close button
     const closeBtn = notification.querySelector('.close-btn');
     closeBtn.addEventListener('click', () => {
         notification.style.animation = 'slideOut 0.5s forwards';
         setTimeout(() => notification.remove(), 500);
     });
 
-    // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentElement) {
             notification.style.animation = 'slideOut 0.5s forwards';
@@ -52,17 +49,27 @@ function showNotification(type, title, message, code = null) {
     }, 5000);
 }
 
-// Form submission handling
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// Form submission handling with debounce
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+document.getElementById('contact-form').addEventListener('submit', debounce(function(e) {
     e.preventDefault();
     
-    // Show loading state
     const submitBtn = this.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
 
-    // Prepare the template parameters
     const templateParams = {
         from_name: document.getElementById('from_name').value,
         from_email: document.getElementById('from_email').value,
@@ -72,132 +79,72 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         to_email: 'muhummadwasifawan@gmail.com'
     };
 
-    // Send the email using EmailJS
     emailjs.send('service_jh931wi', 'template_yf12r9d', templateParams)
         .then(function(response) {
-            // Show success message
+            showNotification('success', 'Success!', 'Your message has been sent successfully.');
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
             submitBtn.style.backgroundColor = '#28a745';
-            
-            // Show success notification with request ID
-            showNotification(
-                'success',
-                'Message Sent Successfully!',
-                'Your message has been delivered. I will get back to you soon.',
-                `Request ID: ${response.status}`
-            );
-            
-            // Reset form
             document.getElementById('contact-form').reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.backgroundColor = '#4834d4';
-                submitBtn.disabled = false;
-            }, 3000);
-        }, function(error) {
-            // Show error message
+        })
+        .catch(function(error) {
+            showNotification('error', 'Error!', 'Failed to send message. Please try again.');
             submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to Send';
             submitBtn.style.backgroundColor = '#dc3545';
-            
-            // Show error notification
-            showNotification(
-                'error',
-                'Failed to Send Message',
-                'There was an error sending your message. Please try again.',
-                `Error: ${error.text}`
-            );
-            
             console.error('EmailJS error:', error);
-            
-            // Reset button after 3 seconds
+        })
+        .finally(function() {
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.backgroundColor = '#4834d4';
                 submitBtn.disabled = false;
             }, 3000);
         });
+}, 500));
+
+// Page Loader
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            setTimeout(() => loader.remove(), 300);
+        }, 500);
+    }
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.2
+// Optimized scroll progress indicator
+const progressBar = document.createElement('div');
+progressBar.className = 'scroll-progress';
+document.body.appendChild(progressBar);
+
+// Throttled scroll handler
+const updateScrollProgress = () => {
+    requestAnimationFrame(() => {
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        progressBar.style.width = `${scrolled}%`;
+    });
 };
 
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+// Optimized intersection observer for animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.2,
+    rootMargin: '50px'
+});
 
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Add particle background
-const createParticle = () => {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random position
-    particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.top = Math.random() * 100 + 'vh';
-    
-    // Random size
-    const size = Math.random() * 5 + 2;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    
-    // Random animation duration
-    particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-    
-    document.body.appendChild(particle);
-    
-    // Remove particle after animation
-    setTimeout(() => {
-        particle.remove();
-    }, 5000);
-};
-
-// Create particles periodically
-setInterval(createParticle, 300);
-
-// Add scroll progress indicator
-const progressBar = document.createElement('div');
-progressBar.className = 'scroll-progress';
-document.body.appendChild(progressBar);
-
-window.addEventListener('scroll', () => {
-    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    progressBar.style.width = `${scrolled}%`;
-});
-
-// Skills animation
-const animateSkills = () => {
-    const skillsSection = document.querySelector('#skills');
-    const progressBars = document.querySelectorAll('.progress');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                progressBars.forEach(bar => {
-                    bar.style.transform = 'scaleX(1)';
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(skillsSection);
-};
-
-// Call the function when the page loads
-window.addEventListener('load', animateSkills);
-
-// Typing Animation for roles
+// Typing Animation
 const typedTextElement = document.querySelector('.typed-text');
 const textArray = ['Web Developer', 'AI Enthusiast', 'Software Engineer'];
 let textArrayIndex = 0;
@@ -219,8 +166,7 @@ function erase() {
         charIndex--;
         setTimeout(erase, 50);
     } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
         setTimeout(type, 500);
     }
 }
