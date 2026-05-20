@@ -61,18 +61,37 @@ function handleSubmit(e) {
   e.preventDefault();
 
   const btn = e.target.querySelector('.form-submit');
-  const originalText = btn.textContent;
 
-  // Success feedback
-  btn.textContent        = 'Message Sent ✓';
-  btn.style.background   = 'var(--green)';
-  btn.disabled           = true;
+  btn.textContent = "Sending...";
+  btn.disabled = true;
 
-  // Reset after 3 seconds
-  setTimeout(() => {
-    btn.textContent      = originalText;
-    btn.style.background = '';
-    btn.disabled         = false;
-    e.target.reset();
-  }, 3000);
+  emailjs.send(
+    "service_ql5jzim",
+    "template_be7kg9h",
+    {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    }
+  )
+  .then(() => {
+    btn.textContent = "Message Sent ✓";
+    btn.style.background = "green";
+
+    setTimeout(() => {
+      btn.textContent = "Send Message →";
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  })
+  .catch((error) => {
+    console.log(error);
+    btn.textContent = "Failed ❌";
+
+    setTimeout(() => {
+      btn.textContent = "Send Message →";
+      btn.disabled = false;
+    }, 3000);
+  });
 }

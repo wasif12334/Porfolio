@@ -391,12 +391,10 @@ section {
 
 /* Your real photo — fills the circle, covers evenly */
 .about-photo {
-  width:       100%;
-  height:      100%;
-  object-fit:  cover;
-  object-position: center top;  /* adjust if needed: "center", "top", "50% 20%" */
-  border-radius: 50%;
-  display:     block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .about-stats {
