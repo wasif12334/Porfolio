@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Muhammad Wasif - Full Stack Developer, WordPress Developer, Digital Marketer & AI Learner">
+  <meta name="description" content="Muhammad Wasif - Full Stack Developer building WordPress websites, AI agents, and RAG applications.">
   <title>Muhammad Wasif — Full Stack Developer</title>
 
   <!-- Fonts -->
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init("lWRe8a5ccaMsDpFjh"); 
+  window.emailjs?.init("lWRe8a5ccaMsDpFjh"); 
 </script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -37,7 +37,7 @@
 
     <a href="mailto:muhummadwasifawan@gmail.com" class="nav-cta">Hire Me</a>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="hero-title">
-        Full Stack Developer · WordPress · AI Learner · Digital Marketer
+        Full Stack Developer · WordPress · Agentic AI
       </div>
 
       <h1>
@@ -67,16 +67,12 @@
         <span class="hero-gradient-text">Wasif</span>
       </h1>
 
-      <p class="hero-desc">
-        I build real-world web applications using modern technologies.
-        Specializing in Full Stack Development, WordPress, and Digital Marketing.
-        Currently exploring AI and building intelligent applications.
-      </p>
+      <p class="hero-desc">I build WordPress websites, full-stack web applications, and AI tools. My recent work includes client sites, a university RAG chatbot, and a multi-agent research project.</p>
 
       <div class="hero-btns">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact"  class="btn-secondary">Contact Me</a>
-        <a href="https://drive.google.com/file/d/1HswCutObufQ2C2NCFq3ipWkAT-Cv2IiD/view?usp=sharing"     target="_blank"    class="btn-outline">Download CV</a>
+        <a href="https://drive.google.com/file/d/1HswCutObufQ2C2NCFq3ipWkAT-Cv2IiD/view?usp=sharing"     target="_blank" rel="noopener noreferrer"    class="btn-outline">Download CV</a>
       </div>
     </div>
 
@@ -98,7 +94,8 @@
     <div class="about-avatar-ring"></div>
 
     <div class="about-avatar-inner">
-      <img src="/Images/portfolio-image.jpg" class="about-photo" />
+      <span class="about-initials" aria-hidden="true">MW</span>
+      <img src="Images/portfolio-image.jpg" class="about-photo" alt="Muhammad Wasif" onerror="this.hidden = true">
     </div>
   </div>
 </div>
@@ -106,36 +103,17 @@
         <!-- Bio + Stats -->
         <div class="fade-in">
           <span class="section-tag">About Me</span>
-          <h2 class="section-title">Passionate Builder &amp; Learner</h2>
+          <h2 class="section-title">Software Engineering &amp; Client Work</h2>
 
           <p style="color:var(--muted); line-height:1.9; margin-bottom:1.5rem;">
-            I am a Software Engineering student passionate about building real-world
-            applications. I have developed multiple working projects using modern
-            technologies. My expertise includes Full Stack Development, WordPress
-            development, and Digital Marketing.
+            I’m a BS Software Engineering student at PAF-IAST. I build WordPress
+            and WooCommerce sites for clients, including online bookstores and healthcare businesses.
           </p>
-
-          <p style="color:var(--muted); line-height:1.9; margin-bottom:2rem;">
-            I also have experience running Facebook Meta Ads campaigns and leading
-            development teams. Currently, I am learning AI concepts and working on
-            upcoming AI-powered projects.
+          <p style="color:var(--muted); line-height:1.9;">
+            During my AI engineering internship at NESCOM CENTIC, I built a
+            multi-agent research and reporting project. I also work with RAG,
+            local SEO, and Meta Ads.
           </p>
-
-          <div class="about-stats">
-            <div class="stat-card">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">Months Marketing</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Tech Stacks</div>
-            </div>
-          
-          </div>
         </div>
 
       </div>
@@ -151,12 +129,11 @@
       <span class="section-tag">Expertise</span>
       <h2 class="section-title">Skills &amp; Technologies</h2>
       <p class="section-subtitle">
-        A modern, diverse skill set spanning frontend, backend, CMS, and digital marketing.
+        Technologies I use for web development, client websites, and AI applications.
       </p>
 
       <div class="skills-grid">
 
-        <!-- Frontend -->
         <div class="skill-card fade-in">
           <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">🖥️</div>
           <div class="skill-card-title">Frontend</div>
@@ -165,65 +142,81 @@
             <span class="skill-tag">CSS</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">React</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Bootstrap</span>
             <span class="skill-tag">Responsive Design</span>
           </div>
         </div>
 
-        <!-- Backend -->
         <div class="skill-card fade-in">
-          <div class="skill-card-icon" style="background:rgba(16,185,129,0.12);">⚙️</div>
-          <div class="skill-card-title">Backend</div>
+          <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">⚙️</div>
+          <div class="skill-card-title">Backend &amp; Databases</div>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">PHP</span>
             <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
           </div>
         </div>
 
-        <!-- CMS -->
         <div class="skill-card fade-in">
-          <div class="skill-card-icon" style="background:rgba(139,92,246,0.12);">🌐</div>
-          <div class="skill-card-title">CMS</div>
+          <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">🌐</div>
+          <div class="skill-card-title">WordPress &amp; E-commerce</div>
           <div class="skill-tags">
             <span class="skill-tag">WordPress</span>
             <span class="skill-tag">Elementor</span>
             <span class="skill-tag">WooCommerce</span>
+            <span class="skill-tag">Website Performance</span>
+            <span class="skill-tag">LiteSpeed Cache</span>
           </div>
         </div>
 
-        <!-- Full Stack -->
         <div class="skill-card fade-in">
-          <div class="skill-card-icon" style="background:rgba(6,182,212,0.12);">🔗</div>
-          <div class="skill-card-title">Full Stack</div>
+          <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">🤖</div>
+          <div class="skill-card-title">Agentic AI &amp; RAG</div>
           <div class="skill-tags">
-            <span class="skill-tag">Frontend + Backend</span>
-            <span class="skill-tag">REST API</span>
-            <span class="skill-tag">Database Basics</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">LangGraph</span>
+            <span class="skill-tag">Multi-Agent Workflows</span>
+            <span class="skill-tag">Retrieval-Augmented Generation</span>
+            <span class="skill-tag">ChromaDB</span>
+            <span class="skill-tag">Embeddings</span>
+            <span class="skill-tag">Semantic Search</span>
+            <span class="skill-tag">Ollama</span>
+            <span class="skill-tag">Mistral AI</span>
           </div>
         </div>
 
-        <!-- Digital Marketing -->
         <div class="skill-card fade-in">
-          <div class="skill-card-icon" style="background:rgba(245,158,11,0.12);">📣</div>
-          <div class="skill-card-title">Digital Marketing</div>
+          <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">📣</div>
+          <div class="skill-card-title">SEO &amp; Digital Marketing</div>
           <div class="skill-tags">
-            <span class="skill-tag">Facebook Meta Ads</span>
+            <span class="skill-tag">Local SEO</span>
+            <span class="skill-tag">On-Page SEO</span>
+            <span class="skill-tag">Rank Math</span>
+            <span class="skill-tag">Meta Ads</span>
             <span class="skill-tag">Lead Generation</span>
-            <span class="skill-tag">Campaign Optimization</span>
             <span class="skill-tag">Audience Targeting</span>
-            <span class="skill-tag">Conversion Optimization</span>
+            <span class="skill-tag">Campaign Optimization</span>
+            <span class="skill-tag">Conversion Tracking</span>
           </div>
         </div>
 
-        <!-- Other -->
         <div class="skill-card fade-in">
-          <div class="skill-card-icon" style="background:rgba(236,72,153,0.12);">✨</div>
-          <div class="skill-card-title">Other</div>
+          <div class="skill-card-icon" style="background:rgba(59,130,246,0.12);">✨</div>
+          <div class="skill-card-title">Development &amp; Deployment</div>
           <div class="skill-tags">
-        
-            <span class="skill-tag">Performance Optimization</span>
-            <span class="skill-tag">SEO Basics</span>
-            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">Netlify</span>
+            <span class="skill-tag">Hostinger</span>
+            <span class="skill-tag">Bluehost</span>
           </div>
         </div>
 
@@ -240,14 +233,14 @@
       <span class="section-tag">Portfolio</span>
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">
-        Real-world applications built with modern technologies and best practices.
+        Client websites, AI tools, and source code.
       </p>
 
+      <h3 class="project-group-title">Client Websites</h3>
       <div class="projects-grid">
 
         <!-- Project 01 -->
         <div class="project-card fade-in">
-          <div class="project-num">Project 01</div>
           <div class="project-title">Emel Book Store</div>
           <p class="project-desc">
             A fully functional e-commerce web application with product listings, cart
@@ -261,14 +254,13 @@
             <span class="tech-tag">PHP</span>
           </div>
           <div class="project-links">
-            <a href="https://emel.com.pk/" target="_blank" class="project-link primary">Live Demo</a>
+            <a href="https://emel.com.pk/" target="_blank" rel="noopener noreferrer" class="project-link primary">Live Demo</a>
     
           </div>
         </div>
 
         <!-- Project 02 -->
         <div class="project-card fade-in">
-          <div class="project-num">Project 02</div>
           <div class="project-title">Bookstree Store</div>
           <p class="project-desc">
             Developed ongoing online bookstore platform with WooCommerce, hosting, customization, and deployment.
@@ -280,14 +272,13 @@
             <span class="tech-tag">PHP</span>
           </div>
           <div class="project-links">
-            <a href="bookstree.pk" target="_blank" class="project-link primary">Live Demo</a>
+            <a href="https://bookstree.pk/" target="_blank" rel="noopener noreferrer" class="project-link primary">Live Demo</a>
             <!-- <a href="#" class="project-link ghost">GitHub</a> -->
           </div>
         </div>
 
         <!-- Project 03 -->
         <div class="project-card fade-in">
-          <div class="project-num">Project 03</div>
           <div class="project-title">Azmat Raza - Writer Website</div>
           <p class="project-desc">
            Designed and developed a professional personal brand website for Asmat Raza, focused on showcasing his identity, writings, and public presence. The platform highlights books, articles, and creative content in a structured and visually engaging format.
@@ -299,14 +290,13 @@
           
           </div>
           <div class="project-links">
-            <a href="asmatraza.com" target="_blank" class="project-link primary">Live Demo</a>
+            <a href="https://asmatraza.com/" target="_blank" rel="noopener noreferrer" class="project-link primary">Live Demo</a>
             <!-- <a href="#" class="project-link ghost">GitHub</a> -->
           </div>
         </div>
 
         <!-- Project 04 -->
         <div class="project-card fade-in">
-          <div class="project-num">Project 04</div>
           <div class="project-title">Industree</div>
           <p class="project-desc">
            Developed a modern event management showcase website featuring services, events, and branding sections with a clean, responsive, and user-focused UI. The platform was designed to enhance visibility, improve user engagement, and professionally present event-related offerings across all devices.
@@ -317,33 +307,128 @@
             <span class="tech-tag">Hosting hostinger</span>
           </div>
           <div class="project-links">
-            <a href="industree.com.pk" target="_blank" class="project-link primary">Live Demo</a>
+            <a href="https://industree.com.pk/" target="_blank" rel="noopener noreferrer" class="project-link primary">Live Demo</a>
             <!-- <a href="#" class="project-link ghost">GitHub</a> -->
           </div>
         </div>
 
-        <!-- Project 05 — Coming Soon -->
-        <div class="project-card coming-soon fade-in">
-          <div class="coming-soon-badge">
-            <span class="coming-soon-dot"></span>
-            Coming Soon
-          </div>
-          <div class="project-num" style="color:var(--accent3);">Project 05</div>
-          <div class="project-title">AI Based Project</div>
-          <p class="project-desc">
-            Currently working on an AI-powered application using modern technologies
-            and intelligent automation. This project will leverage machine learning
-            and natural language processing to solve real-world problems.
-            Stay tuned for the launch.
-          </p>
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">Ali Diagnostic Clinic</h4>
+          <p class="project-desc">A clinic website for patients in Haripur to explore diagnostic and family medicine services and book appointments.</p>
           <div class="project-techs">
-            <span class="tech-tag" style="background:rgba(139,92,246,0.1); border-color:rgba(139,92,246,0.3); color:#c4b5fd;">Python</span>
-            <span class="tech-tag" style="background:rgba(139,92,246,0.1); border-color:rgba(139,92,246,0.3); color:#c4b5fd;">AI / ML</span>
-            <span class="tech-tag" style="background:rgba(139,92,246,0.1); border-color:rgba(139,92,246,0.3); color:#c4b5fd;">React</span>
-            <span class="tech-tag" style="background:rgba(139,92,246,0.1); border-color:rgba(139,92,246,0.3); color:#c4b5fd;">NLP</span>
+            <span class="tech-tag">WordPress</span>
+            <span class="tech-tag">Elementor</span>
+            <span class="tech-tag">Appointment Booking</span>
           </div>
-        </div>
+          <div class="project-links">
+            <a href="https://alidiagnosticclinic.com/" target="_blank" rel="noopener noreferrer" class="project-link primary">Visit Ali Diagnostic Clinic</a>
+          </div>
+        </article>
 
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">Fither Health</h4>
+          <p class="project-desc">A healthcare website that presents physiotherapy services and publishes content for people searching for care in Haripur.</p>
+          <div class="project-techs">
+            <span class="tech-tag">Healthcare Website</span>
+            <span class="tech-tag">Local SEO</span>
+          </div>
+          <div class="project-links">
+            <a href="https://fitherhealth.com/" target="_blank" rel="noopener noreferrer" class="project-link primary">Visit Fither Health</a>
+          </div>
+        </article>
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">Center for the Study of Islam and Decolonization</h4>
+          <p class="project-desc">    Built a content-focused WordPress website for CSID. Organized articles,
+    categories, and pages so readers can browse the center’s publications
+    and find relevant content.
+</p>
+          <div class="project-techs">
+            <span class="tech-tag">WordPress</span>
+    <span class="tech-tag">Content Management</span>
+    <span class="tech-tag">Site Navigation</span>
+          </div>
+            <div class="project-links">
+    <a href="https://csidpk.org/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-link primary">Visit CSID Website</a>
+  </div>
+
+        </article>
+        <article class="project-card fade-in">
+          <div class="coming-soon-badge"><span class="coming-soon-dot"></span>In Progress</div>
+          <h4 class="project-title">TDX Pakistan</h4>
+          <p class="project-desc">A courier and logistics website redesign with service pages and a quote request form.</p>
+          <div class="project-techs">
+            <span class="tech-tag">WordPress</span>
+            <span class="tech-tag">Website Redesign</span>
+          </div>
+          <div class="project-links">
+            <a href="https://tdxpk.com/" target="_blank" rel="noopener noreferrer" class="project-link primary">Visit TDX Pakistan</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="project-group-title">AI Projects</h3>
+      <div class="projects-grid">
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">X Account Investigator</h4>
+          <p class="project-desc">A multi-agent workflow built during my internship to analyze public X profiles and activity, verify evidence, and generate structured PDF reports.</p>
+          <div class="project-techs">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">Ollama</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/wasif12334/x-account-investigator" target="_blank" rel="noopener noreferrer" class="project-link primary">View Investigator Code</a>
+          </div>
+        </article>
+
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">AI Product Price Search</h4>
+          <p class="project-desc">An AI-assisted search tool for finding products and their prices.</p>
+          <div class="project-techs">
+            <span class="tech-tag">AI Search</span>
+            <span class="tech-tag">Product Discovery</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/wasif12334/AI-Search-tool-for-Products-Price" target="_blank" rel="noopener noreferrer" class="project-link primary">View Price Search Code</a>
+          </div>
+        </article>
+
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">PAF-IAST RAG Chatbot</h4>
+          <p class="project-desc">A chatbot that retrieves information from indexed university webpages to answer questions about admissions, programs, scholarships, and departments.</p>
+          <div class="project-techs">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">ChromaDB</span>
+            <span class="tech-tag">Mistral AI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/wasif12334/RAGProject" target="_blank" rel="noopener noreferrer" class="project-link primary">View RAG Chatbot Code</a>
+          </div>
+        </article>
+
+        <article class="project-card fade-in">
+          
+          <h4 class="project-title">SEO Content Generator</h4>
+          <p class="project-desc">An AI tool for drafting search-optimized content.</p>
+          <div class="project-techs">
+            <span class="tech-tag">Generative AI</span>
+            <span class="tech-tag">Content Drafting</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/wasif12334/SEO-Content-Geneartor" target="_blank" rel="noopener noreferrer" class="project-link primary">View SEO Generator Code</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -357,23 +442,34 @@
       <span class="section-tag">Experience</span>
       <h2 class="section-title">Work &amp; Experience</h2>
       <p class="section-subtitle">
-        Leading teams and driving results through development and marketing.
+         AI engineering, WordPress client work, and digital marketing.
+
       </p>
 
       <div class="exp-grid">
 
-        <!-- Team Leader -->
         <div class="exp-card fade-in">
-          <div class="exp-icon" style="background:rgba(59,130,246,0.12);">👨‍💼</div>
-          <div class="exp-role">Team Leader</div>
-          <div class="exp-duration">Development &amp; Marketing</div>
+          <div class="exp-icon" style="background:rgba(59,130,246,0.12);" aria-hidden="true">💼</div>
+          <div class="exp-role">AI Engineer Intern</div>
+          <div class="exp-duration">NESCOM CENTIC · Remote</div>
           <ul class="exp-list">
-            <li>Managed development and marketing tasks across projects</li>
-            <li>Handled end-to-end project planning and timelines</li>
-            <li>Coordinated development workflow and code reviews</li>
-            <li>Managed UI/UX decisions and deployment pipelines</li>
+            <li>Built the X Account Investigator with Python, LangChain, and LangGraph.</li>
+            <li>Developed agent workflows for profile analysis, evidence verification, and report generation.</li>
+            <li>Investigated opportunities to reduce redundant model calls and improve workflow efficiency.</li>
           </ul>
         </div>
+
+        <div class="exp-card fade-in">
+          <div class="exp-icon" style="background:rgba(59,130,246,0.12);" aria-hidden="true">💼</div>
+          <div class="exp-role">WordPress Developer</div>
+          <div class="exp-duration">Client Projects</div>
+          <ul class="exp-list">
+            <li>Built and maintained WordPress and WooCommerce websites for publishers, retailers, and service businesses.</li>
+            <li>Customized Elementor layouts, set up hosting and deployments, and worked on site performance and local SEO.</li>
+          </ul>
+        </div>
+
+        
 
         <!-- Digital Marketer -->
         <div class="exp-card fade-in">
@@ -409,8 +505,8 @@
         <div class="edu-icon">🎓</div>
         <div>
           <div class="edu-degree">BS Software Engineering</div>
-          <div class="edu-school">Software Engineering Program</div>
-          <span class="edu-status">Currently Enrolled</span>
+          <div class="edu-school">Pak-Austria Fachhochschule Institute of Applied Sciences and Technology (PAF-IAST)</div>
+          <span class="edu-status">2023 – Present</span>
           <p style="color:var(--muted); font-size:0.88rem; margin-bottom:1rem; line-height:1.8;">
             Focused on building strong foundations in software engineering principles,
             algorithms, and real-world application development.
@@ -421,49 +517,6 @@
             <span class="edu-tag">Real World Projects</span>
             <span class="edu-tag">Software Design</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════════════════════════════
-       AI SECTION
-  ════════════════════════════════════════════════════════ -->
-  <section id="ai">
-    <div class="ai-bg"></div>
-
-    <div class="section-inner" style="position:relative; z-index:1; text-align:center;">
-      <span class="section-tag">Upcoming</span>
-      <h2 class="section-title" style="margin-bottom:3rem;">AI &amp; The Future</h2>
-
-      <div class="ai-card fade-in">
-        <div style="position:relative; z-index:1;">
-
-          <div class="ai-orb">
-            <div class="ai-orb-inner">🤖</div>
-          </div>
-
-          <div class="coming-soon-badge" style="margin: 0 auto 1rem;">
-            <span class="coming-soon-dot"></span>
-            AI Projects Coming Soon
-          </div>
-
-          <div class="ai-title">Intelligent Applications</div>
-
-          <p class="ai-desc">
-            Currently learning AI and building intelligent applications. Multiple AI-based
-            projects are under active development using modern ML frameworks and automation
-            tools. Stay tuned for upcoming launches.
-          </p>
-
-          <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-            <span class="edu-tag" style="padding:6px 14px;">Machine Learning</span>
-            <span class="edu-tag" style="padding:6px 14px;">Natural Language Processing</span>
-            <span class="edu-tag" style="padding:6px 14px;">Automation</span>
-            <span class="edu-tag" style="padding:6px 14px;">AI APIs</span>
-          </div>
-
         </div>
       </div>
     </div>
@@ -488,15 +541,15 @@
 
           <div class="contact-links">
 
-            <a href="mailto:muhummadwasifawan@email.com" class="contact-link">
+            <a href="mailto:muhummadwasifawan@gmail.com" class="contact-link">
               <div class="contact-link-icon" style="background:rgba(59,130,246,0.12);">✉️</div>
               <div class="contact-link-text">
                 <strong>Email</strong>
-                <span>muhummadwasifawan@email.com</span>
+                <span>muhummadwasifawan@gmail.com</span>
               </div>
             </a>
 
-            <a href="https://github.com/wasif12334/" target="_blank" class="contact-link">
+            <a href="https://github.com/wasif12334/" target="_blank" rel="noopener noreferrer" class="contact-link">
               <div class="contact-link-icon" style="background:rgba(255,255,255,0.06);">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -508,7 +561,7 @@
               </div>
             </a>
 
-            <a href="https://www.linkedin.com/in/wasif-awan-53771b286/" target="_blank" class="contact-link">
+            <a href="https://www.linkedin.com/in/muhummad-wasif-ali-raza/" target="_blank" rel="noopener noreferrer" class="contact-link">
               <div class="contact-link-icon" style="background:rgba(10,102,194,0.15);">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -516,11 +569,11 @@
               </div>
               <div class="contact-link-text">
                 <strong>LinkedIn</strong>
-                <span>linkedin.com/in/wasifawan</span>
+                <span>linkedin.com/in/muhummad-wasif-ali-raza</span>
               </div>
             </a>
 
-            <a href="https://wa.me/923175677697" target="_blank" class="contact-link">
+            <a href="https://wa.me/923175677697" target="_blank" rel="noopener noreferrer" class="contact-link">
               <div class="contact-link-icon" style="background:rgba(37,211,102,0.12);">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#25d366" aria-hidden="true">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -577,7 +630,7 @@
       &copy; 2026 <strong>Muhammad Wasif</strong>
     </p>
     <p style="font-size:0.78rem; opacity:0.6;">
-      Full Stack Developer &middot; WordPress Developer &middot; Digital Marketer &middot; AI Learner
+      Full Stack Developer &middot; WordPress Developer &middot; Agentic AI
     </p>
   </footer>
 
